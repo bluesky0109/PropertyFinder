@@ -13,7 +13,14 @@ var {
 } = React;
 
 class SearchPage extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      searchString: 'london'
+    };
+  }
   render() {
+    console.log('SearchPage.render');
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -25,6 +32,8 @@ class SearchPage extends Component {
         <View style={styles.flowRight}>
           <TextInput
             style={styles.searchInput}
+            value={this.state.searchString}
+            onChange={this.onSearchTextChanged.bind(this)}
             placeholder='Search via name or postcode'/>
           <TouchableHighlight style={styles.button}
             underlayColor='#99d9f4'>
@@ -38,6 +47,12 @@ class SearchPage extends Component {
         <Image source={require('image!house')} style={styles.image}/>
       </View>
     );
+  }
+
+  onSearchTextChanged(event) {
+    console.log('onSearchTextChanged');
+    this.setState({searchString: event.nativeEvent.text});
+    console.log(this.state.searchString);
   }
 }
 
