@@ -5,12 +5,7 @@
 'use strict';
 
 var React = require('react-native');
-
-class HelloWorld extends React.Component {
-  render() {
-    return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
-  }
-}
+var SearchPage = require('./SearchPage');
 
 class PropertyFinderApp extends React.Component {
   render() {
@@ -19,7 +14,7 @@ class PropertyFinderApp extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Property Finder',
-          component: HelloWorld,
+          component: SearchPage,
         }}/>
     );
   }
@@ -27,13 +22,7 @@ class PropertyFinderApp extends React.Component {
 
 var styles = React.StyleSheet.create({
   container: {
-    flex: 1
-  },
-  text: {
-    color: 'black',
-    backgroundColor: 'white',
-    fontSize: 30,
-    margin: 80
+    flex: 1,
   }
 });
 
