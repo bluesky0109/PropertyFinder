@@ -8,7 +8,7 @@ var React = require('react-native');
 
 class PropertyFinderApp extends React.Component {
   render() {
-    return React.createElement(React.Text, {style: styles.text}, "hello World");
+    return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
   }
 }
 
