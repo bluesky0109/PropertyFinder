@@ -6,13 +6,29 @@
 
 var React = require('react-native');
 
-class PropertyFinderApp extends React.Component {
+class HelloWorld extends React.Component {
   render() {
     return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
   }
 }
 
+class PropertyFinderApp extends React.Component {
+  render() {
+    return (
+      <React.NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: HelloWorld,
+        }}/>
+    );
+  }
+}
+
 var styles = React.StyleSheet.create({
+  container: {
+    flex: 1
+  },
   text: {
     color: 'black',
     backgroundColor: 'white',
